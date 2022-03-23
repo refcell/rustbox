@@ -4,11 +4,15 @@
 
 A Collection of Rust Primitives and Framework Implementations
 
+
 ## Crates
 
 Green Threads implemented in Rust following [this guide.](https://cfsamson.gitbook.io/green-threads-explained-in-200-lines-of-rust/)
 
 Asynchronous primitives impletemented in the `asyncly` crate follow [this guide.](https://cfsamson-1.gitbook.io/async-basics-explained-with-rust/)
+
+A [Reactor-Executor Pattern](https://tianpan.co/blog/2015-01-13-understanding-reactor-pattern-for-highly-scalable-i-o-bound-web-server) implementation as detailed in [this post](https://cfsamsonbooks.gitbook.io/epoll-kqueue-iocp-explained/appendix-1/reactor-executor-pattern).
+
 
 ## License
 
