@@ -28,3 +28,9 @@ impl Excutor {
         }
     }
 }
+
+impl Drop for Excutor {
+    fn drop(&mut self) {
+        self.events.clear();
+    }
+}

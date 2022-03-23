@@ -42,3 +42,9 @@ impl Reactor {
         self.registrator.close_loop().expect("close loop err.");
     }
 }
+
+impl Drop for Reactor {
+    fn drop(&mut self) {
+        self.stop_loop();
+    }
+}
