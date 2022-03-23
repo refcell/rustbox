@@ -60,10 +60,7 @@ impl Runtime {
         let mut available_threads: Vec<Thread> = (1..MAX_THREADS).map(|i| Thread::new(i)).collect();
         threads.append(&mut available_threads);
 
-        Runtime {
-            threads,
-            current: 0,
-        }
+        Runtime { threads, current: 0 }
     }
 
     pub fn init(&self) {
@@ -94,7 +91,7 @@ impl Runtime {
                 pos = 0;
             }
             if pos == self.current {
-                return false;
+                return false
             }
         }
 
@@ -171,7 +168,8 @@ unsafe extern "C" fn switch() {
         "mov r12, [rsi + 0x20]",
         "mov rbx, [rsi + 0x28]",
         "mov rbp, [rsi + 0x30]",
-        "ret", options(noreturn)
+        "ret",
+        options(noreturn)
     );
 }
 

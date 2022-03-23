@@ -1,11 +1,13 @@
+use minimio::{Events, Interests, Poll, Registrator, TcpStream};
+use std::{io, sync::mpsc::Sender, thread};
 
-struct Reactor {
+pub struct Reactor {
     handle: std::thread::JoinHandle<()>,
     registrator: Registrator,
 }
 
 impl Reactor {
-    fn new(evt_sender: Sender<usize>) -> Reactor {
+    pub fn new(evt_sender: Sender<usize>) -> Reactor {
         let mut poll = Poll::new().unwrap();
         let registrator = poll.registrator();
 
@@ -13,10 +15,13 @@ impl Reactor {
         let handle = thread::spawn(move || {
             let mut events = Events::with_capacity(1024);
             loop {
-                // This call will block until an event is ready
+                println!("Waiting! {:?}", poll);
                 match poll.poll(&mut events, Some(200)) {
                     Ok(..) => (),
-                    Err(ref e) if e.kind() == io::ErrorKind::Interrupted => break,
+                    Err(ref e) if e.kind() == io::ErrorKind::Interrupted => {
+                        println!("INTERRUPTED: {}", e);
+                        break
+                    }
                     Err(e) => panic!("Poll error: {:?}, {}", e.kind(), e),
                 };
                 for event in &events {
@@ -29,11 +34,11 @@ impl Reactor {
         Reactor { handle, registrator }
     }
 
-    fn register_stream_read_interest(&self, stream: &mut TcpStream, token: usize) {
-        self.registrator.register(stream, token, Interests::readable()).expect("registration err.");
+    pub fn register_stream_read_interest(&self, stream: &mut TcpStream, token: usize) {
+        self.registrator.register(stream, token, Interests::READABLE).expect("registration err.");
     }
 
-    fn stop_loop(&self) {
+    pub fn stop_loop(&self) {
         self.registrator.close_loop().expect("close loop err.");
     }
 }

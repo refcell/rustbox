@@ -1,7 +1,8 @@
 [package]
-name = "rep"
+name = "task"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+rep = { path = "../rep" }
 minimio={git="https://github.com/cfsamson/examples-minimio"}

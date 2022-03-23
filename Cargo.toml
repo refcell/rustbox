@@ -2,7 +2,8 @@
 members = [
   "gthreads",
   "asyncly",
-  "rep"
+  "rep",
+  "task"
 ]
 
 # Binary size optimizations
