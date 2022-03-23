@@ -1,6 +1,7 @@
 [workspace]
 members = [
-  "example"
+  "gthreads",
+  "asyncly"
 ]
 
 # Binary size optimizations

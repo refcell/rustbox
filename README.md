@@ -2,27 +2,9 @@
 
 # stub.rs • [![tests](https://github.com/abigger87/stub.rs/actions/workflows/tests.yaml/badge.svg)](https://github.com/abigger87/stub.rs/actions/workflows/tests.yaml) [![lints](https://github.com/abigger87/stub.rs/actions/workflows/lints.yaml/badge.svg)](https://github.com/abigger87/stub.rs/actions/workflows/lints.yaml) ![GitHub](https://img.shields.io/github/license/abigger87/stub.rs)  ![Crates.io](https://img.shields.io/crates/v/stub.rs)
 
-Modern, Extensible Template for Rust Projects.
+Green Threads implemented in Rust following [this guide.](https://cfsamson.gitbook.io/green-threads-explained-in-200-lines-of-rust/)
 
-## Getting Started
-
-Click `use this template` on [Github](https://github.com/abigger87/stub.rs) to create a new repository with this repo as the initial state.
-
-## Blueprint
-
-```ml
-assets
-├─ embedded documentation images
-example
-├─ src
-│  └─ lib.rs — Example Rust Library
-├─ Cargo.toml — Library Cargo Manifest
-Cargo.toml — Workspace Cargo Manifest
-```
-
-## Development
-
-TODO
+Asynchronous primitives impletemented in the `asyncly` crate follow [this guide.](https://cfsamson-1.gitbook.io/async-basics-explained-with-rust/)
 
 ## License
 
