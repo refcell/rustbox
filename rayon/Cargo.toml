@@ -1,0 +1,11 @@
+[package]
+name = "rayon"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rayon = "1.5.1"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1.13"
+tracing-futures = { version = "0.2.5" }
+tracing-subscriber = "0.3.9"

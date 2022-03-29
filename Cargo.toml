@@ -5,6 +5,7 @@ members = [
   "asyncly",
   "minitokio",
   "myredis",
+  "rayon",
   "rep",
   "task"
 ]
