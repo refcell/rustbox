@@ -1,7 +1,10 @@
 [workspace]
 members = [
+  "actors",
   # "gthreads",
   "asyncly",
+  "minitokio",
+  "myredis",
   "rep",
   "task"
 ]

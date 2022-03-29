@@ -1,6 +1,8 @@
 [package]
-name = "asyncly"
+name = "minitokio"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+futures = "0.3"
+crossbeam = "0.8"
